@@ -27,9 +27,8 @@ int main()
 		for (int p = 0; p < 3; p++){
 			cout << "Plan de test " << p << " donnees " << d << endl;
 			plansTest[p]->appliquer(*donnees[d]);
-			cout << plansTest[p]->getResultat()->getInformations() << endl;
 			// Bonus #2 : Surcharge de l'opérateur << dans Resultat
-			// cout << *(plansTest[p]->getResultat()) << endl;
+			cout << *(plansTest[p]->getResultat()) << endl;
 		}
 
 	for (int d = 0; d < 2; d++)
@@ -40,7 +39,7 @@ int main()
 		delete plansTest[p];
 	delete plansTest;
 	// Bonus #1 : Gestion des constructeurs et des destructeurs
-	//cout << "Nombre Constructeurs : " << Resultat::getNbConstructeurs() << endl;
-	//cout << "Nombre Destructeurs : " << Resultat::getNbDestructeurs() << endl;
+	cout << "Nombre Constructeurs : " << Resultat::getNbConstructeurs() << endl;
+	cout << "Nombre Destructeurs : " << Resultat::getNbDestructeurs() << endl;
 	return 0;
 }

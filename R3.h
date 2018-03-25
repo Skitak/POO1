@@ -6,9 +6,9 @@
 class R3 : public Regle{
 public:
 	R3();
-	virtual ~R3();
+	virtual ~R3(){}
 protected:
-	bool exectuerRegle() const;
+	bool executerRegle();
 };
 
 #endif /* R3_H_ */

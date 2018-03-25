@@ -6,8 +6,7 @@
 class ConteneurRegles {
 public:
 	ConteneurRegles(Regle* rule) : ConteneurRegles(rule, NULL, NULL) {}
-	ConteneurRegles(Regle* rule, ConteneurRegles* positif, ConteneurRegles* negatif):
-		regle(rule), suivantPositif(positif), suivantNegatif(negatif) {}
+	ConteneurRegles(Regle* rule, ConteneurRegles* positif, ConteneurRegles* negatif);
 	virtual ~ConteneurRegles();
 
 	Regle* getRegle() const {return regle;}

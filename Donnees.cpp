@@ -1,4 +1,17 @@
 #include "Donnees.h"
+#include "Resultat.h"
+
+Donnees::Donnees(int a, int b, int c, int d, int e): d1(a), d2(b), d3(c), d4(d), d5(e) {
+	Resultat::addConstructeur();
+}
+
+Donnees::~Donnees() {
+	Resultat::addDestructeur();
+}
+
+Donnees::Donnees(Donnees const& autre) : d1(autre.d1), d2(autre.d2), d3(autre.d3), d4(autre.d4), d5(autre.d5) {
+	Resultat::addConstructeur();
+}
 
 bool Donnees::setD1(int value) {
 	if (value < 0)
@@ -40,5 +53,9 @@ bool Donnees::valide() {
 }
 
 std::string Donnees::toString() const {
-	return "D(";
+	return "D(" + std::to_string(d1) + "/"
+			+ std::to_string(d2) + "/"
+			+ std::to_string(d3) + "/"
+			+ std::to_string(d4) + "/"
+			+ std::to_string(d5) + ")";
 }

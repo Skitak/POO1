@@ -6,9 +6,10 @@
 class Donnees {
 public:
 
-	Donnees(int a, int b, int c, int d, int e): d1(a), d2(b), d3(c), d4(d), d5(e) {}
+	Donnees(int a, int b, int c, int d, int e);
 	Donnees(): Donnees(1,2,3,4,5){}
-	virtual ~Donnees(){}
+	Donnees(Donnees const& autre);
+	virtual ~Donnees();
 
 	int getD1() const { return d1;};
 	int getD2() const { return d2;};

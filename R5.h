@@ -6,10 +6,10 @@
 class R5 : public RegleModification{
 public:
 	R5(): RegleModification("R5"){}
-	virtual ~R5();
+	virtual ~R5(){}
 
 protected:
-	void exectuerRegleModification();
+	void executerRegleModification();
 };
 
 #endif /* R5_H_ */

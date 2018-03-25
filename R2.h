@@ -6,9 +6,9 @@
 class R2 : public Regle{
 public:
 	R2();
-	virtual ~R2();
+	virtual ~R2(){}
 protected:
-	bool exectuerRegle() const;
+	bool executerRegle();
 
 };
 

@@ -1,12 +1,18 @@
 #include "PlanTest.h"
 
+#include "Regle.h"
 #include "R1.h"
 #include "R4.h"
 #include "R5.h"
-#include "Regle.h"
 #include "ConteneurRegles.h"
 
+PlanTest::PlanTest() : resultat(NULL), conteneurReglesDepart(NULL){
+	Resultat::addConstructeur();
+}
+
 void PlanTest::appliquer(Donnees donnees) {
+	if (resultat != NULL)
+		delete resultat;
 	resultat = new Resultat(donnees);
 	ConteneurRegles* conteneurRegleCourante = conteneurReglesDepart;
 	while (conteneurRegleCourante != NULL) {
@@ -14,6 +20,7 @@ void PlanTest::appliquer(Donnees donnees) {
 		conteneurRegleCourante = positif ?
 				conteneurRegleCourante->getSuivantPositif() : conteneurRegleCourante->getSuivantNegatif();
 	}
+	resultat->completerTest(donnees);
 }
 
 void PlanTest::initialiserRegles() {
@@ -25,6 +32,7 @@ PlanTest::~PlanTest() {
 		delete conteneurReglesDepart;
 	if (resultat != NULL)
 		delete resultat;
+	Resultat::addDestructeur();
 }
 
 ConteneurRegles* PlanTest::chargerRegles() {

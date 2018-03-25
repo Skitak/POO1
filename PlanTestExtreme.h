@@ -7,7 +7,7 @@
 class PlanTestExtreme : public PlanTest{
 public:
 	PlanTestExtreme();
-	virtual ~PlanTestExtreme();
+	virtual ~PlanTestExtreme(){}
 protected:
 	ConteneurRegles* chargerRegles();
 

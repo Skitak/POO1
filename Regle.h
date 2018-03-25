@@ -16,11 +16,11 @@ public:
 protected:
 	Donnees* donnees;
 	Resultat* resultat;
+	std::string id;
 
 	virtual bool executerRegle() {return true;}
 
 private:
-	std::string id;
 
 	void prevalidation();
 	void postvalidation();

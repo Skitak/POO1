@@ -4,13 +4,15 @@
 Regle::Regle(std::string name) : id(name){
 	donnees = NULL;
 	resultat = NULL;
+	Resultat::addConstructeur();
 }
 
 Regle::~Regle() {
-	if (donnees == NULL)
-		delete donnees;
-	if (resultat == NULL)
-		delete resultat;
+//	if (donnees == NULL)
+//		delete donnees;
+//	if (resultat == NULL)
+//		delete resultat;
+	Resultat::addDestructeur();
 }
 
 bool Regle::executer(Donnees* donnees, Resultat* resultat) {

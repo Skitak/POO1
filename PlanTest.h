@@ -7,7 +7,7 @@
 
 class PlanTest {
 public:
-	PlanTest() : resultat(NULL), conteneurReglesDepart(NULL){}
+	PlanTest();
 	virtual ~PlanTest();
 
 	Resultat* getResultat() const {return resultat;}

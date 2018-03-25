@@ -5,8 +5,8 @@
 
 class EnsembleDonnees2 : public Donnees{
 public:
-	EnsembleDonnees2();
-	virtual ~EnsembleDonnees2();
+	EnsembleDonnees2() : Donnees(10,15,18,20,5) {}
+	virtual ~EnsembleDonnees2(){}
 };
 
 #endif

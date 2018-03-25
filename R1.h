@@ -6,10 +6,10 @@
 class R1 : public Regle{
 public:
 	R1();
-	~R1();
+	~R1(){};
 
 protected:
-	bool executerRegle() const;
+	bool executerRegle();
 };
 
 #endif
